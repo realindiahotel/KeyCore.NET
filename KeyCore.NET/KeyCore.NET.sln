@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUI", "TestUI\TestUI.csproj", "{E478D97C-C6F8-48D6-8FE6-BA54D04C126A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{910D006B-4524-444D-95B2-50FD42818EAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyCore.NET", "KeyCore.NET\KeyCore.NET.csproj", "{C4DEA306-79E2-4154-9F46-EC1D22530850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinUtilities.NET", "..\..\BitcoinUtilities.NET\BitcoinUtilities.NET\BitcoinUtilities.NET\BitcoinUtilities.NET.csproj", "{E054C08C-8B6E-4767-999B-F7DE5F8A1E94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E478D97C-C6F8-48D6-8FE6-BA54D04C126A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E478D97C-C6F8-48D6-8FE6-BA54D04C126A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E478D97C-C6F8-48D6-8FE6-BA54D04C126A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E478D97C-C6F8-48D6-8FE6-BA54D04C126A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910D006B-4524-444D-95B2-50FD42818EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910D006B-4524-444D-95B2-50FD42818EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910D006B-4524-444D-95B2-50FD42818EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910D006B-4524-444D-95B2-50FD42818EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4DEA306-79E2-4154-9F46-EC1D22530850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4DEA306-79E2-4154-9F46-EC1D22530850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4DEA306-79E2-4154-9F46-EC1D22530850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4DEA306-79E2-4154-9F46-EC1D22530850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E054C08C-8B6E-4767-999B-F7DE5F8A1E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E054C08C-8B6E-4767-999B-F7DE5F8A1E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E054C08C-8B6E-4767-999B-F7DE5F8A1E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E054C08C-8B6E-4767-999B-F7DE5F8A1E94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
