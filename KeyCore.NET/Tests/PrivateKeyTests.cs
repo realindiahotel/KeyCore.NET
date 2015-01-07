@@ -25,46 +25,10 @@ namespace Tests
             Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1NotCompressed.Version) }[0]);
             Assert.AreEqual(Utilities.BytesToHexString(ones), Utilities.BytesToHexString(pk1Compressed.PrivateKeyBytes));
             Assert.AreEqual(Utilities.BytesToHexString(ones), Utilities.BytesToHexString(pk1NotCompressed.PrivateKeyBytes));
-        }
+        }     
 
         [TestMethod]
         public void Test2()
-        {
-            byte[] bytes = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            PrivateKey pk1Compressed = new PrivateKey(Globals.ProdDumpKeyVersion, bytes);
-            PrivateKey pk1NotCompressed = new PrivateKey(Globals.ProdDumpKeyVersion, bytes, false);
-            Assert.AreEqual("KwFfNUhSDaASSAwtG7ssQM1uVX8RgX5GHWnnLfhfiQDigjioWXHH", pk1Compressed.WIFEncodedPrivateKeyString);
-            Assert.AreEqual("5HpjE2Hs7vjU4SN3YyPQCdhzCu92WoEeuE6PWNuiPyTu3ESGnzn", pk1NotCompressed.WIFEncodedPrivateKeyString);
-            Assert.AreEqual("KwFfNUhSDaASSAwtG7ssQM1uVX8RgX5GHWnnLfhfiQDigjioWXHH", pk1Compressed.ToString());
-            Assert.AreEqual("5HpjE2Hs7vjU4SN3YyPQCdhzCu92WoEeuE6PWNuiPyTu3ESGnzn", pk1NotCompressed.ToString());
-            Assert.AreEqual(true, pk1Compressed.MakesCompressedPublicKey);
-            Assert.AreEqual(false, pk1NotCompressed.MakesCompressedPublicKey);
-            Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1Compressed.Version) }[0]);
-            Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1NotCompressed.Version) }[0]);
-            Assert.AreEqual(Utilities.BytesToHexString(bytes), Utilities.BytesToHexString(pk1Compressed.PrivateKeyBytes));
-            Assert.AreEqual(Utilities.BytesToHexString(bytes), Utilities.BytesToHexString(pk1NotCompressed.PrivateKeyBytes));
-        }
-
-        [TestMethod]
-        public void Test3()
-        {
-            byte[] bytes = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            PrivateKey pk1Compressed = new PrivateKey(Globals.ProdDumpKeyVersion, "KwFfNUhSDaASSAwtG7ssQM1uVX8RgX5GHWnnLfhfiQDigjioWXHH");
-            PrivateKey pk1NotCompressed = new PrivateKey(Globals.ProdDumpKeyVersion, "5HpjE2Hs7vjU4SN3YyPQCdhzCu92WoEeuE6PWNuiPyTu3ESGnzn");
-            Assert.AreEqual("KwFfNUhSDaASSAwtG7ssQM1uVX8RgX5GHWnnLfhfiQDigjioWXHH", pk1Compressed.WIFEncodedPrivateKeyString);
-            Assert.AreEqual("5HpjE2Hs7vjU4SN3YyPQCdhzCu92WoEeuE6PWNuiPyTu3ESGnzn", pk1NotCompressed.WIFEncodedPrivateKeyString);
-            Assert.AreEqual("KwFfNUhSDaASSAwtG7ssQM1uVX8RgX5GHWnnLfhfiQDigjioWXHH", pk1Compressed.ToString());
-            Assert.AreEqual("5HpjE2Hs7vjU4SN3YyPQCdhzCu92WoEeuE6PWNuiPyTu3ESGnzn", pk1NotCompressed.ToString());
-            Assert.AreEqual(true, pk1Compressed.MakesCompressedPublicKey);
-            Assert.AreEqual(false, pk1NotCompressed.MakesCompressedPublicKey);
-            Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1Compressed.Version) }[0]);
-            Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1NotCompressed.Version) }[0]);
-            Assert.AreEqual(Utilities.BytesToHexString(bytes), Utilities.BytesToHexString(pk1Compressed.PrivateKeyBytes));
-            Assert.AreEqual(Utilities.BytesToHexString(bytes), Utilities.BytesToHexString(pk1NotCompressed.PrivateKeyBytes));
-        }
-
-        [TestMethod]
-        public void Test4()
         {
             PrivateKey pk1Compressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
             PrivateKey pk1NotCompressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion,false);
