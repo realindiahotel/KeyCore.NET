@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Linq;
 using Bitcoin.BitcoinUtilities;
 
@@ -110,9 +111,9 @@ namespace Bitcoin.KeyCore
         /// <param name="networkVersion">Network version grab from BitcoinUtilities.Globals</param>
         /// <param name="compressedPublicKey">Optional bool to force compressed public key creation, defaults to true</param>
         /// <returns></returns>
-        public static PrivateKey CreatePrivateKey(byte[] networkVersion, bool compressedPublicKey=true)
+        public static async Task<PrivateKey> CreatePrivateKey(byte[] networkVersion, bool compressedPublicKey=true)
         {
-            return new PrivateKey(networkVersion, Utilities.GetRandomBytes(32), compressedPublicKey);
+            return new PrivateKey(networkVersion, await Utilities.GetRandomBytes(32), compressedPublicKey);
         }
 
         /// <summary>

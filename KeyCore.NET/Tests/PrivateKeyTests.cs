@@ -30,8 +30,8 @@ namespace Tests
         [TestMethod]
         public void Test2()
         {
-            PrivateKey pk1Compressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
-            PrivateKey pk1NotCompressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion,false);
+            PrivateKey pk1Compressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion).Result;
+            PrivateKey pk1NotCompressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion,false).Result;
             string wifPk1Compressed = pk1Compressed.WIFEncodedPrivateKeyString;
             string wifPk2NotCompressed = pk1NotCompressed.WIFEncodedPrivateKeyString;
             Assert.AreEqual(wifPk1Compressed, pk1Compressed.ToString());
