@@ -30,8 +30,23 @@ namespace Tests
         [TestMethod]
         public void Test2()
         {
-            PrivateKey pk1Compressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion).Result;
-            PrivateKey pk1NotCompressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion,false).Result;
+            PrivateKey pk1Compressed = PrivateKey.CreatePrivateKeyAsync(Globals.ProdDumpKeyVersion).Result;
+            PrivateKey pk1NotCompressed = PrivateKey.CreatePrivateKeyAsync(Globals.ProdDumpKeyVersion,false).Result;
+            string wifPk1Compressed = pk1Compressed.WIFEncodedPrivateKeyString;
+            string wifPk2NotCompressed = pk1NotCompressed.WIFEncodedPrivateKeyString;
+            Assert.AreEqual(wifPk1Compressed, pk1Compressed.ToString());
+            Assert.AreEqual(wifPk2NotCompressed, pk1NotCompressed.ToString());
+            Assert.AreEqual(true, pk1Compressed.MakesCompressedPublicKey);
+            Assert.AreEqual(false, pk1NotCompressed.MakesCompressedPublicKey);
+            Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1Compressed.Version) }[0]);
+            Assert.AreEqual(Globals.ProdDumpKeyVersion[0], new byte[] { Convert.ToByte(pk1NotCompressed.Version) }[0]);
+        }
+
+        [TestMethod]
+        public void Test3()
+        {
+            PrivateKey pk1Compressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
+            PrivateKey pk1NotCompressed = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion, false);
             string wifPk1Compressed = pk1Compressed.WIFEncodedPrivateKeyString;
             string wifPk2NotCompressed = pk1NotCompressed.WIFEncodedPrivateKeyString;
             Assert.AreEqual(wifPk1Compressed, pk1Compressed.ToString());

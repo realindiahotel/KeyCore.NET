@@ -111,9 +111,20 @@ namespace Bitcoin.KeyCore
         /// <param name="networkVersion">Network version grab from BitcoinUtilities.Globals</param>
         /// <param name="compressedPublicKey">Optional bool to force compressed public key creation, defaults to true</param>
         /// <returns></returns>
-        public static async Task<PrivateKey> CreatePrivateKey(byte[] networkVersion, bool compressedPublicKey=true)
+        public static PrivateKey CreatePrivateKey(byte[] networkVersion, bool compressedPublicKey=true)
         {
-            return new PrivateKey(networkVersion, await Utilities.GetRandomBytes(32), compressedPublicKey);
+            return new PrivateKey(networkVersion, Utilities.GetRandomBytes(32), compressedPublicKey);
+        }
+
+        /// <summary>
+        /// A static method to create a new PrivateKey object from crypto random 32 bytes
+        /// </summary>
+        /// <param name="networkVersion">Network version grab from BitcoinUtilities.Globals</param>
+        /// <param name="compressedPublicKey">Optional bool to force compressed public key creation, defaults to true</param>
+        /// <returns></returns>
+        public async static Task<PrivateKey> CreatePrivateKeyAsync(byte[] networkVersion, bool compressedPublicKey = true)
+        {
+            return new PrivateKey(networkVersion, await Utilities.GetRandomBytesAsync(32), compressedPublicKey);
         }
 
         /// <summary>

@@ -28,22 +28,18 @@ namespace TestUI
         {
             InitializeComponent();
             //encode 40 random bytes using base64 and put them in the text box
-            PrimeThis();
-        }
-
-        private async void PrimeThis()
-        {
-            tbString.Text = Convert.ToBase64String(await Utilities.GetRandomBytes(36)).Replace('\r','r').Replace('\n','n');
+            
+            tbString.Text = Convert.ToBase64String(Utilities.GetRandomBytes(39)).Replace('\r', 'r').Replace('\n', 'n');
             //create a 32 byte private key from the 40 byte random string now in the textbox
             byte[] keyBytes = new SHA256Managed().ComputeHash(UTF8Encoding.UTF8.GetBytes(tbString.Text), 0, UTF8Encoding.UTF8.GetBytes(tbString.Text).Length);
             PrivateKey pkInitialWif = new PrivateKey(Globals.ProdDumpKeyVersion, keyBytes);
             wifp.Text = pkInitialWif.WIFEncodedPrivateKeyString;
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //create a new random private key 
-            PrivateKey random = await PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
+            PrivateKey random = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
             DisplayResults(random.PrivateKeyBytes);
         }
 
