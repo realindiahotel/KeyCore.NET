@@ -3,6 +3,8 @@ KeyCore.NET
 
 C# (PCL) implementation of Bitcoin Private Key and Public Key management and also the generation of Bitcoin Addresses.
 
+This PCL is targeted for Universal Apps (Windows 8.1/Windows Phone 8.1) and .NET 4.5.1 ONLY. No support for Windows 8 or Windows Phone 8/8.1 Silverlight apps.
+
 ### PLEASE ENSURE YOU ALSO DOWNLOAD, BUILD AND REFERENCE THE BitcoinUtilities.NET PROJECT LOCATED HERE: https://github.com/Thashiznets/BitcoinUtilities.NET ###
 
 Supports compressed Public Keys as well as legacy full y co-ordinate Public Keys. Supports Bitcoin Addresses for both Public Key types, as well as dumping and importing of both WIF and WIF compressed Private Keys.
