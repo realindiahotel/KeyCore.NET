@@ -15,4 +15,4 @@ Demo GUI has been supplied to demonstrate usage, you can use this GUI to create 
 
 Also has unit tests to make sure I don't break things going forward.
 
-This code is put out for all to use for free, I don't have a great deal of Bitcoin but I'd really like some so if you find yourself using this code in a commercial implementation and you feel you are going to make some money from it, I’d appreciate it if you fling me some bitcoin to 1ETQjMkR1NNh4jwLuN5LxY7bbip39HC9PUPSV thanks :)
+This code is put out for all to use for free, if you find yourself using this code in a commercial implementation and you feel you are going to make some money from it, I’d appreciate it if you fling me some bitcoin to 1TipMe74AoUSv5JotGutG6zfvjsC6v2SC thanks :)
